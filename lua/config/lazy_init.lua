@@ -26,11 +26,15 @@ local plugins = {
 				highlight = { enable = true, }}end
 	},
 
+	{
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		dependencies = { "nvim-lua/plenary.nvim" }
+	},
+
 	{ "rose-pine/neovim", name = "rose-pine" },
 
-	{ "ThePrimeagen/harpoon",
-	    branch = "harpoon2",
-	    dependencies = { "nvim-lua/plenary.nvim" }},
+	{"folke/tokyonight.nvim", lazy = false, priority = 1000, opts = {} },
 
 	{ 'mbbill/undotree' },
 
@@ -50,10 +54,35 @@ local plugins = {
 
 	{ 'L3MON4D3/LuaSnip' },
 
-	{ "neovim/nvim-lspconfig" },}
+	{ "neovim/nvim-lspconfig" },
 
+	{ "j-hui/fidget.nvim", opts = {} },
 
-	require("lazy").setup({
-		spec = "config.lazy",
-		change_detection = { notify = false }
-	})
+	{ "williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig", },
+
+	{ "williamboman/mason.nvim",
+	  "williamboman/mason-lspconfig.nvim",
+	  "hrsh7th/cmp-nvim-lsp",
+	  "hrsh7th/cmp-buffer",
+	  "hrsh7th/cmp-path",
+	  "hrsh7th/cmp-cmdline",
+	  "hrsh7th/nvim-cmp",
+	  "L3MON4D3/LuaSnip",
+	  "saadparwaiz1/cmp_luasnip",
+	  "j-hui/fidget.nvim",
+	  "neovim/nvim-lspconfig",},
+
+	{ "folke/which-key.nvim",
+		event = "VeryLazy",
+		init = function()
+		vim.o.timeout = true
+		vim.o.timeoutlen = 300
+		end,  opts = {}},
+}
+
+require("lazy").setup({
+	spec = "config.lazy",
+	change_detection = { notify = false },
+})
