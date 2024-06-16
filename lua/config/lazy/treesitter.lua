@@ -5,8 +5,8 @@ return {
 	require("nvim-treesitter.install").compilers = { "clang" }    -- might be unnecessary for Linux
         require("nvim-treesitter.configs").setup({
             ensure_installed = {
-                "vimdoc", "javascript", "typescript", "c", "lua", "rust",
-                "jsdoc", "bash",
+                "vimdoc", "javascript", "c", "lua", "rust",
+                "jsdoc", "bash", "python",
             },
 
             sync_install = false,

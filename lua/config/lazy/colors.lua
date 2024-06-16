@@ -1,15 +1,25 @@
 function Colors(color)
-	color = color or "rose-pine"
+	color = color or "melange"
 	vim.cmd.colorscheme(color)
 
-	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+	vim.api.nvim_set_hl(0, "Normal", { bg = "none", italic = false })
+	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none", italic = false })
 
 end
+
+function MelangeColors()
+    vim.g.melange_enable_font_variants = 0    -- disable font variants
+    require("lush")                           -- make sure Lush is installed
+    require("melange.build").build()          -- Compile to vimscript
+end
+
 
 return {
     {
         "folke/tokyonight.nvim",
+		dependencies = {
+			"rktjmp/lush.nvim",
+			},
         config = function()
             require("tokyonight").setup({
                 -- your configuration comes here
@@ -30,22 +40,34 @@ return {
         end
     },
 
-    {
-        "rose-pine/neovim",
-        name = "rose-pine",
-        config = function()
-            require('rose-pine').setup({
-                disable_background = true,
-                styles = {
-                    italic = false,
-                },
-            })
+	{
+		"savq/melange-nvim",
+		name = "melange",
+		config = function()
 
-            vim.cmd("colorscheme rose-pine")
+			vim.cmd("colorscheme melange")
 
-            Colors()
-        end
-    },
 
+			MelangeColors()
+			Colors()
+	end },
+
+
+	{
+		"rose-pine/neovim",
+		name = "rose-pine",
+		config = function()
+			require('rose-pine').setup({
+				disable_background = true,
+				styles = {
+					italic = false,
+				},
+			})
+
+			vim.cmd("colorscheme rose-pine")
+
+
+			Colors()
+	end },
 
 }
