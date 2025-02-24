@@ -10,6 +10,7 @@ vim.g.maplocalleader = "\\"
 
 --unmap F1
 vim.cmd("inoremap <F1> <Esc>g<C-G>")
+
 --set number in netrw
 vim.cmd([[let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro']])
 
@@ -72,6 +73,10 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 -- if err not nil
 vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>")
 
+-- if __name__ == "__main__"
+vim.keymap.set("n", "<leader>nn", "0iif __name__ == \"__main__\":<CR>main()<Esc>")
+
+-- source
 vim.keymap.set("n", "<leader><leader>", function()
 	vim.cmd("so")
 end)
