@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 N E O V I M 
 =======
 NVIM CONF
@@ -12,4 +11,3 @@ manually change branch (git switch "harpoon2")
 
 changes needed for linux
 (undotree.lua, treesitter.lua)
->>>>>>> Stashed changes
