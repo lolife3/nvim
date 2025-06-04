@@ -15,7 +15,7 @@ vim.cmd("inoremap <F1> <Esc>g<C-G>")
 vim.cmd([[let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro']])
 
 --Ex, save
-vim.keymap.set("n", "<leader>bb", vim.cmd.Ex)
+--vim.keymap.set("n", "<leader>bb", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>w", vim.cmd.w)
 
 -- open/close quickfix list (:cexpr [] to clear list)

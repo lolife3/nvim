@@ -82,6 +82,7 @@ return {
             -- update_in_insert = true,
             float = {
                 focusable = false,
+				wrap = false,
                 style = "minimal",
                 border = "rounded",
                 source = "always",
