@@ -1,12 +1,13 @@
 return {
     "nvim-treesitter/nvim-treesitter",
+    "nvim-treesitter/playground",
     build = ":TSUpdate",
     config = function()
 	require("nvim-treesitter.install").compilers = { "clang" }    
         require("nvim-treesitter.configs").setup({
             ensure_installed = {
                 "vimdoc", "javascript", "c", "lua", "rust",
-                "jsdoc", "bash", "python",
+                "jsdoc", "bash", "python", "go",
             },
 
             sync_install = false,
