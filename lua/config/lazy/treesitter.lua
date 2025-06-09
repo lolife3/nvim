@@ -1,6 +1,5 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    "nvim-treesitter/playground",
     build = ":TSUpdate",
     config = function()
 	require("nvim-treesitter.install").compilers = { "clang" }    

@@ -4,7 +4,8 @@ return {
     tag = "0.1.5",
 
     dependencies = {
-        "nvim-lua/plenary.nvim"
+        "nvim-lua/plenary.nvim",
+        "nvim-telescope/telescope-live-grep-args.nvim" ,
     },
 
     config = function()
@@ -25,6 +26,8 @@ return {
             builtin.grep_string({ search = vim.fn.input("Grep > ") })
         end)
         vim.keymap.set('n', '<leader>ht', builtin.help_tags, {})
+
+        telescope.load_extension("live_grep_args")
     end
 }
 
