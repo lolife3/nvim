@@ -68,7 +68,7 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("v", "Q", [[:s/\%V\(.*\)\%V/"\1"/]])
 
 -- create executable
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+vim.keymap.set("n", "<leader>ex", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- if err not nil
 vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>")
