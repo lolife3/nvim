@@ -55,7 +55,8 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+--LSP buffer format
+vim.keymap.set({ "n", "v" }, "<leader>f", vim.lsp.buf.format)
 
 --dont override buffer after pasting
 vim.keymap.set("x", "<leader>p", [["_dP]])
