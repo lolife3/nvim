@@ -32,33 +32,27 @@ return {
                 "gopls",
                 "clangd",
             },
-            handlers = {
-                function(server_name) -- default handler (optional)
 
+            handlers = {
+                function(server_name)
                     require("lspconfig")[server_name].setup {
                         capabilities = capabilities
                     }
                 end,
+            },
 
-                ["lua_ls"] = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.lua_ls.setup {
-                        capabilities = capabilities,
-                        settings = {
-                            Lua = {
-				    runtime = { version = "Lua 5.1" },
-                                diagnostics = {
-                                    globals = { "vim", "it", "describe", "before_each", "after_each" },
-                                }
-                            }
-                        }
+            vim.lsp.config("lua_ls", {
+                settings = {
+                    Lua = {
+                        diagnostics = {
+                            globals = { "vim" } }
                     }
-                end,
+                }
             }
+            )
         })
 
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
-
         cmp.setup({
             snippet = {
                 expand = function(args)
@@ -95,6 +89,3 @@ return {
         })
     end
 }
-
-
-

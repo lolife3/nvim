@@ -1,6 +1,7 @@
 require("os")
 
 local TMUX_ENV = os.getenv("TMUX")
+
 if TMUX_ENV then
 	vim.fn.setenv("TMUX", TMUX_ENV)
 end
