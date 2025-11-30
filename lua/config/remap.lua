@@ -52,11 +52,7 @@ vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 
 --copy single line
 vim.keymap.set("n", "<leader>Y", [["+Y]])
-
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
-
---LSP buffer format
-vim.keymap.set({ "n", "v" }, "<leader>f", vim.lsp.buf.format)
 
 --dont override buffer after pasting
 vim.keymap.set("x", "<leader>p", [["_dP]])
@@ -64,19 +60,12 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 --replace word in a file
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
-vim.keymap.set("n", "Q", "<nop>")
-
 --add quotation marks around selected
+vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("v", "Q", [[:s/\%V\(.*\)\%V/"\1"/]])
 
 -- create executable
 vim.keymap.set("n", "<leader>ex", "<cmd>!chmod +x %<CR>", { silent = true })
-
--- if err not nil
-vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>")
-
--- if __name__ == "__main__"
-vim.keymap.set("n", "<leader>nn", "0iif __name__ == \"__main__\":<CR>main()<Esc>")
 
 -- source
 vim.keymap.set("n", "<leader><leader>", function()
