@@ -19,25 +19,25 @@ autocmd('FileType', {
     group = CustomConfig,
     callback = function(event)
         local filetype = event.match
-        local buf = event.buf
+        local opts = { buffer = event.buf }
 
 
         if filetype == "python" then
             vim.keymap.set("n",
                 "<leader>ee", "0iif __name__ == \"__main__\":<cr>main()<esc>",
-                { buffer = buf })
+                opts)
 
         elseif filetype == "cpp" then
             vim.keymap.set("n",
                 "<leader>ee",
                 'ostd::cout << "" << std::endl;<Esc>2F"',
-                { buffer = buf })
+                opts)
 
         elseif filetype == "go" then
             vim.keymap.set("n",
                 "<leader>ee",
                 "oif err != nil {<CR>}<Esc>Oreturn err<Esc>",
-                { buffer = buf})
+                opts)
 
         end
     end
