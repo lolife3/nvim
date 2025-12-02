@@ -30,7 +30,7 @@ autocmd('FileType', {
         elseif filetype == "cpp" then
             vim.keymap.set("n",
                 "<leader>ee",
-                'ostd::cout << "" << std::endl;<Esc>2F"',
+                'ostd::cout << "" << "\\n";<Esc>2F"',
                 opts)
 
         elseif filetype == "go" then
