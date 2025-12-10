@@ -1,3 +1,11 @@
-N E O V I M 
+N E O V I M
 =======
-MY NVIM CONF
+
+# Requirements
+nvim
+ripgrep
+fzf
+tree-sitter
+
+
+NerdFont (optional)
