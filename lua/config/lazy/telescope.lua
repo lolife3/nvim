@@ -10,7 +10,13 @@ return {
     config = function()
         local telescope = require('telescope')
         local builtin = require('telescope.builtin')
-        telescope.setup({})
+        telescope.setup({
+            defaults = {
+                i = {
+                    ["<C-g>"] = "which_key"
+                }
+            }
+        })
 
         vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
         vim.keymap.set('n', '<leader>ft', builtin.help_tags, {})
