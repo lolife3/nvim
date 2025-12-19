@@ -48,7 +48,7 @@ autocmd('LspAttach', {
     group = CustomConfig,
     callback = function(event)
         local opts = { buffer = event.buf }
-        vim.keymap.set({ "n", "v" }, "<leader>f", vim.lsp.buf.format)
+        --vim.keymap.set({ "n", "v" }, "<leader>f", vim.lsp.buf.format)
         vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
         vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
         vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
