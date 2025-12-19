@@ -5,10 +5,3 @@ N E O V I M
 nvim
 
 ripgrep
-
-fzf
-
-tree-sitter
-
-
-NerdFont (optional)
